@@ -5,16 +5,23 @@
 
   <form method = 'POST'>
   {% csrf_token %}
-    <label for="name">name:</label>
-    <input type="text" name="name"><br><br>
-    <label for="id">id:</label>
-    <input type="text" name="id"><br><br>
-    <label for="domain">domain:</label>
-    <input type="text" name="domain"><br><br>
-    <label for="company">company:</label>
-    <input type="text" name="company"><br><br>
-    <input type="submit" value="Submit">
-  </form>
-    
+    <label for="name" >name:</label>
+    <input type="text" name="name" ><br><br>
+    <label for="id" >id:</label>
+    <input type="text" name="id" ><br><br>
+    <label for="domain" >domain:</label>
+    <input type="text" name="domain" ><br><br>
+    <label for="company" >company:</label>
+    <input type="text" name="company" ><br><br>
+    <input type="submit" value="Submit" >
+   </form>
+    {% for emp in data%}
+    <div>
+      <p>{{emp.id}}</p>
+      <p>name-{{emp.name}}</p>
+      <p>domain-{{emp.domain}}</p>
+      <p>company-{{emp.company}}</p>
+    </div>
+    {% endfor %}
 </body>
 </html>

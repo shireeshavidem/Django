@@ -18,4 +18,5 @@ def greet(request):
         ecompany = request.POST['company'],
         emp = Employee(name=ename ,id=eid ,domain=edomain ,company=ecompany)
         emp.save()
-    return render(request,"index.html")
+    employees = Employee.objects.all()    
+    return render(request,"index.html",{"data":employees})
